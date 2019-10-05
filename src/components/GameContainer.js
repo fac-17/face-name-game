@@ -31,13 +31,11 @@ const GameContainer = ({
           setplayerPositionIndex(current => current + 1);
         }
       }
-      // console.log("player position", playerPositionIndex);
       if (event.key === " " && gameStatus === "start") {
         setselectedIndex(playerPositionIndex);
         if (playerPositionIndex === correctIndex) {
           setScore(s => s + 1);
         }
-        // console.log("index of selection", playerPositionIndex);
 
         //load next game phase
         if (currentPhase < gamePhasesArray.length - 1) {
