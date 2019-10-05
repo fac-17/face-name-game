@@ -2,8 +2,8 @@ import React from "react";
 import "./homePage.css";
 import requestMembers from "../../utils/requestMembers";
 
-import TeamForm from "../../components/teamForm/TeamForm";
-import SearchStatus from "../../components/SearchStatus/SearchStatus";
+import TeamForm from "../../components/TeamForm";
+import SearchStatus from "../../components/SearchStatus";
 
 const HomePage = ({ setPage, profiles, setProfiles }) => {
   const loadGame = () => {

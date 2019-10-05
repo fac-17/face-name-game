@@ -1,7 +1,7 @@
 import React from "react";
 import "./gamePage.css";
-
 import { positionArray } from "./../../utils/constants";
+
 const GamePage = ({
   gameArrays: { gamePhasesArray, correctPositionArray }
 }) => {
@@ -10,10 +10,11 @@ const GamePage = ({
   const [currentPhase, setCurrentPhase] = React.useState(0);
   const [score, setScore] = React.useState(0);
   const [gameStatus, setGameStatus] = React.useState("start");
+
   const correctIndex = correctPositionArray[currentPhase];
-  console.log({ correctIndex });
+  // console.log({ correctIndex });
   const correctName = gamePhasesArray[currentPhase][correctIndex].name;
-  console.log({ correctName });
+  // console.log({ correctName });
   const styleObj = {
     transform: positionArray[playerPositionIndex]
   };
@@ -29,6 +30,7 @@ const GamePage = ({
   const image4Style = {
     backgroundImage: `url(${gamePhasesArray[currentPhase][3].image})`
   };
+
   React.useEffect(() => {
     const handleKeyDown = event => {
       if (event.key === "ArrowLeft") {
