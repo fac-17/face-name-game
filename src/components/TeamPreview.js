@@ -4,7 +4,11 @@ const TeamForm = ({ profiles }) => {
   const teamMember = (profile, index) => {
     return (
       <div key={index + profile} className="team-member">
-        <img className="team-member-image" src={profile.image} />
+        <img
+          className="team-member-image"
+          alt={profile.name}
+          src={profile.image}
+        />
         <p className="team-member-name">{profile.name}</p>
       </div>
     );
