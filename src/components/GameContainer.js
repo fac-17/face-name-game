@@ -44,6 +44,7 @@ const GameContainer = ({
           setCurrentPhase(oldPhase => oldPhase + 1);
         } else {
           setGameStatus("end");
+          return () => window.removeEventListener("keydown", handleKeyDown);
         }
         //reset so nothing is selected
         setselectedIndex(-1);

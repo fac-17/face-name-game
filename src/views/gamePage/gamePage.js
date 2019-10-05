@@ -4,6 +4,7 @@ import GameInfoBar from "../../components/GameInfoBar";
 import GameContainer from "../../components/GameContainer";
 
 const GamePage = ({
+  setPage,
   gameArrays: { gamePhasesArray, correctPositionArray }
 }) => {
   const [currentPhase, setCurrentPhase] = React.useState(0);
@@ -13,6 +14,9 @@ const GamePage = ({
   const correctIndex = correctPositionArray[currentPhase];
   // console.log({ correctIndex });
   const correctName = gamePhasesArray[currentPhase][correctIndex].name;
+  const loadGame = () => {
+    setPage("load");
+  };
   // console.log({ correctName });
 
   return (
@@ -47,6 +51,11 @@ const GamePage = ({
           <h2>
             Your Score:{score}/{gamePhasesArray.length}
           </h2>
+          <br />
+
+          <button className="load-button" onClick={loadGame}>
+            Reload Game
+          </button>
         </div>
       )}
     </div>
