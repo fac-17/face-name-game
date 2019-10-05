@@ -1,6 +1,7 @@
 import React from "react";
 import "./gamePage.css";
 import { positionArray } from "./../../utils/constants";
+import GameInfoBar from "../../components/GameInfoBar";
 
 const GamePage = ({
   gameArrays: { gamePhasesArray, correctPositionArray }
@@ -45,13 +46,14 @@ const GamePage = ({
           setplayerPositionIndex(current => current + 1);
         }
       }
-      console.log("player position", playerPositionIndex);
+      // console.log("player position", playerPositionIndex);
       if (event.key === " " && gameStatus === "start") {
         setselectedIndex(playerPositionIndex);
         if (playerPositionIndex === correctIndex) {
           setScore(s => s + 1);
         }
-        console.log("index of selection", playerPositionIndex);
+        // console.log("index of selection", playerPositionIndex);
+
         //load next game phase
         if (currentPhase < gamePhasesArray.length - 1) {
           setCurrentPhase(oldPhase => oldPhase + 1);
@@ -77,17 +79,11 @@ const GamePage = ({
     <div className="main-container">
       {gameStatus === "start" ? (
         <>
-          <div className="game-info">
-            <h2>
-              Phase: <span className="highlight-text">{currentPhase + 1}</span>
-            </h2>
-            <h2 className="target">
-              Who is <span className="highlight-text">{correctName}</span>
-            </h2>
-            <h3>
-              Score: <span className="highlight-text">{score}</span>
-            </h3>
-          </div>
+          <GameInfoBar
+            currentPhase={currentPhase}
+            correctName={correctName}
+            score={score}
+          />
           <div className="game-container">
             <div className="column"></div>
             <div

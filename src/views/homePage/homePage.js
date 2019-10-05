@@ -1,7 +1,6 @@
 import React from "react";
 import "./homePage.css";
 import requestMembers from "../../utils/requestMembers";
-
 import TeamForm from "../../components/TeamForm";
 import SearchStatus from "../../components/SearchStatus";
 
