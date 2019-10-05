@@ -3,7 +3,7 @@ import React from "react";
 const SearchStatus = ({ profiles, loadGame }) => {
   const notFound = <p>not Found</p>;
   const searchForTeam = (
-    <p>Stop reading things and search for a team you fool 🙃</p>
+    <p>(Stop reading things and search for a team you fool) 🙃</p>
   );
   const loading = <p> Loading ⏳</p>;
   const loadGameComponent = Array.isArray(profiles) ? (

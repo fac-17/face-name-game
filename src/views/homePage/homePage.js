@@ -23,18 +23,15 @@ const HomePage = ({ setPage, profiles, setProfiles }) => {
   return (
     <div className="home-page">
       <div>
-        <h1>The best Name and Face learning game... EVER</h1>
+        <h1>Learn Names and Faces</h1>
         <div className="instructions">
           <p>We currently only use github data.</p>
           <p className="instruction-item">
-            1. Enter an organisation (e.g. 'FAC-17')
+            1. Enter an organisation on Github (e.g. 'FAC-17')
           </p>
           <p className="instruction-item">
-            2. Enter a team within that org (e.g. 'students') and get learning
-          </p>
-          <p className="instruction-item">
-            (3. Remember to tell us how much better our game is than Anthony and
-            Andy's)
+            2. Enter a team within that organisation (e.g. 'students') and get
+            learning
           </p>
         </div>
       </div>
