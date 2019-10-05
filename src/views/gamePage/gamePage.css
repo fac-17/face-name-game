@@ -80,3 +80,7 @@
 .highlight-text {
   color: greenyellow;
 }
+
+.hidden-name {
+  display: none;
+}

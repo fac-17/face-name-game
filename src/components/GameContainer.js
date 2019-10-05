@@ -78,7 +78,11 @@ const GameContainer = ({
             style={{
               backgroundImage: `url(${gamePhasesArray[currentPhase][imgNum].image})`
             }}
-          ></div>
+          >
+            <span className="hidden-name">
+              {gamePhasesArray[currentPhase][imgNum].name}
+            </span>
+          </div>
         );
       })}
       <div className="player-character" style={styleObj}></div>
