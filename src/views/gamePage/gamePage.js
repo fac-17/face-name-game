@@ -19,18 +19,6 @@ const GamePage = ({
   const styleObj = {
     transform: positionArray[playerPositionIndex]
   };
-  const image1Style = {
-    backgroundImage: `url(${gamePhasesArray[currentPhase][0].image})`
-  };
-  const image2Style = {
-    backgroundImage: `url(${gamePhasesArray[currentPhase][1].image})`
-  };
-  const image3Style = {
-    backgroundImage: `url(${gamePhasesArray[currentPhase][2].image})`
-  };
-  const image4Style = {
-    backgroundImage: `url(${gamePhasesArray[currentPhase][3].image})`
-  };
 
   React.useEffect(() => {
     const handleKeyDown = event => {
@@ -86,46 +74,24 @@ const GamePage = ({
           />
           <div className="game-container">
             <div className="column"></div>
-            <div
-              className={`img img1 ${
-                selectedIndex === 0 && selectedIndex === correctIndex
-                  ? "shot-down-correct"
-                  : selectedIndex === 0
-                  ? "shot-down-incorrect"
-                  : ""
-              }`}
-              style={image1Style}
-            ></div>
-            <div
-              className={`img img2 ${
-                selectedIndex === 1 && selectedIndex === correctIndex
-                  ? "shot-down-correct"
-                  : selectedIndex === 1
-                  ? "shot-down-incorrect"
-                  : ""
-              }`}
-              style={image2Style}
-            ></div>
-            <div
-              className={`img img3 ${
-                selectedIndex === 2 && selectedIndex === correctIndex
-                  ? "shot-down-correct"
-                  : selectedIndex === 2
-                  ? "shot-down-incorrect"
-                  : ""
-              }`}
-              style={image3Style}
-            ></div>
-            <div
-              className={`img img4 ${
-                selectedIndex === 3 && selectedIndex === correctIndex
-                  ? "shot-down-correct"
-                  : selectedIndex === 3
-                  ? "shot-down-incorrect"
-                  : ""
-              }`}
-              style={image4Style}
-            ></div>
+
+            {[0, 1, 2, 3].map(imgNum => {
+              return (
+                <div
+                  className={`img img${imgNum} ${
+                    selectedIndex === imgNum && selectedIndex === correctIndex
+                      ? "shot-down-correct"
+                      : selectedIndex === imgNum
+                      ? "shot-down-incorrect"
+                      : ""
+                  }`}
+                  style={{
+                    backgroundImage: `url(${gamePhasesArray[currentPhase][imgNum].image})`
+                  }}
+                ></div>
+              );
+            })}
+
             <div className="player-character" style={styleObj}></div>
           </div>
 
