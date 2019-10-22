@@ -1,7 +1,7 @@
 import React from "react";
 import "./loadPage.css";
 import generateGameArrays from "./../../utils/generateGameArrays";
-import TeamPreview from "./../../components/TeamPreview/TeamPreview";
+import TeamPreview from "./../../components/TeamPreview";
 
 const LoadPage = ({ profiles, setPage, setGameArrays }) => {
   const startGame = event => {
