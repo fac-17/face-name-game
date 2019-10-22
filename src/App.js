@@ -26,7 +26,7 @@ const App = () => {
           setGameArrays={setGameArrays}
         />
       ) : page === "game" ? (
-        <GamePage gameArrays={gameArrays} />
+        <GamePage gameArrays={gameArrays} setPage={setPage} />
       ) : (
         <p>ERROR!!!</p>
       )}
